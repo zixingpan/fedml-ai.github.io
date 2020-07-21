@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <title>Decentralized Federated Multi-Task Learning and System Design</title>
+
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Decentralized Federated Multi-Task Learning and System Design">
+    <meta property="og:description" content="He et al. Federated Multi-Task Learning with Decentralized Periodic Averaging SGD.">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100, 100i,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    <!-- Showdown -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+	<!-- Showdown Katex Extension -->
+	<script src="js/showdown-katex.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+	<!-- Showdown Figure Self Defined Extension -->
+	<script src="js/figure-extension.js"></script>
+    	
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- WAVE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+
+    <script>
+		// Ignore the Materialized Unorder List Defined In WAVE by cusomizing a classMap in showdownJS
+        const classMap = {
+            ul: 'browser-default'
+        };
+        const bindings = Object.keys(classMap).map(key => ({
+            type: 'output',
+            regex: new RegExp(`<${key}(.*)>`, 'g'),
+            replace: `<${key} class="${classMap[key]}" $1>`
+        }));
+		
+		const katexConfig = {
+		  displayMode: true,
+		  throwOnError: true, // allows katex to fail silently
+		  errorColor: '#ff0000',
+		  delimiters: [
+		    { left: "$", right: "$", display: false }
+		  ]
+		}
+
+        const converter = new showdown.Converter({
+            extensions: [
+				bindings, 
+				'figure',
+				showdownKatex(katexConfig)
+			]
+        });
+        converter.setOption('parseImgDimensions', true);
+        converter.setOption('tables', true);
+        converter.setFlavor('github');
+
+        $("#markdown-body").ready(() => {
+            $.get( "content.md", (data) => {
+                const content_html = converter.makeHtml(data);
+                $("#markdown-body").html(content_html);
+                hljs.initHighlighting();
+            });
+        })
+		
+		// Modal Image Gallery
+		function fullscreenImg(_img) {
+		  $("#fullscreen-img").attr("src", _img.src);
+		  $("#fullscrren-div").css("display", "block");
+		  $("#fullscrren-caption").html(_img.alt)
+		}
+		
+    </script>
+
+    <body>
+		
+		<!-- Pseudo div to show images in fullscreen -->
+		<div id="fullscrren-div" class="w3-modal w3-black" onclick="this.style.display='none'">
+		  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+		  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+			<img id="fullscreen-img" class="w3-image">
+		    <p id="fullscrren-caption" class="w3-opacity w3-large"></p>
+		  </div>
+		</div>
+		
+		
+        <!-- Header -->
+        <!-- Wide screen -->
+        <header class="hd-container w3-container hide-narrow content-center">
+            <div class="w3-cell-row" style="width: 90%; margin: auto; max-width: 1600px; margin-top: 80px; margin-bottom: 40px">
+                <div class="w3-container w3-cell w3-cell-middle w3-center" style="width: 30%">
+                    <div class="w3-card-4 w3-round-large furniture-grid">
+                        <img src="img/header-v.gif" width="100%">
+                    </div>
+                </div>
+                <div class="w3-container w3-cell w3-cell-middle w3-center vl">
+                </div>
+                <div class="w3-container w3-cell w3-cell-middle">
+                    <div class="title">FedML: A Research Library and Benchmark for <br> Federated Machine Learning</div>
+                    <!-- Author -->
+                    <div class="authorship-container">
+                        <ul class="horizontal-list">
+                            <li><a href="https://chaoyanghe.com" target="_blank"><i class="far fa-user"></i> Chaoyang He</a></li>
+                            <li><a href="https://chaoyanghe.com" target="_blank"><i class="far fa-user"></i>Mi Zhang</a></li>
+                        </ul>
+                        <span class="school"><a href="https://www.usc.edu/" target="_blank"><i class="fas fa-university"></i> University of Southern California</a></span>
+                    </div>
+
+                    <div class="excerpt w3-padding-16">
+                        Federated learning is a fast-growing research field in distributed machine learning.
+                        Despite considerable research efforts have been made, there is no standard library and benchmark that supports fast developing FL algorithms and fair comparison of the performance of these FL algorithms.
+                        In this work, we introduce <b>FedML</b>, an open research library and benchmark that facilitates the development of new FL algorithms and  fair performance comparison with existing algorithms under a variety of commonly used FL settings.
+                        We believe <b>FedML</b> will provide an efficient and reproducible means of developing and evaluating federated learning algorithms to the FL research community.
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Narrow screen -->
+        <header class="hd-container w3-container hide-wide">
+            <div class="w3-row-padding w3-center w3-padding-24">
+                <span class="title">Decentralized<br>Federated<br>Multi-Task Learning<br>and System Design</span>
+            </div>
+            <div class="w3-row-padding">
+                <!-- Author -->
+                <div class="authorship-container">
+                    <ul class="horizontal-list">
+                        <li><a href="https://chaoyanghe.com" target="_blank"><i class="far fa-user"></i> Chaoyang He</a></li>
+                        <li><a href="https://chaoyanghe.com" target="_blank"><i class="far fa-user"></i>Mi Zhang</a></li>
+                    </ul>
+                    <span class="school"><a href="https://www.usc.edu/" target="_blank"><i class="fas fa-university"></i> University of Southern California</a></span>
+                </div>
+
+            </div>
+            <div class="w3-row-padding w3-center w3-padding-16">
+                <div class="w3-card-4 w3-round-large furniture-grid" style="width: 80%; max-width: 400px">
+                    <img src="img/header-h.gif" width="100%">
+                </div>
+            </div>
+            <div class="w3-row-padding"><hr></div>
+            <div class="w3-row-padding w3-padding-16">
+                <div class="excerpt">
+                    Federated Learning enables training models collaboratively over a large number of distributed edge devices without integrating their local data, while Federated Multi-Task Learning can further help to learn a personalized model for each device. However, they both pose particular statistical and systems challenges. To simultaneously address these two challenges, and focusing on training deep neural networks models collaboratively, we propose a decentralized approach with a multi-task framework and a new optimization algorithm called Decentralized Periodic Averaging SGD (DPA-SGD). We also developed a real-world decentralized federated learning system on a large-scale cluster (1024 CPU workers) to prove our multi-task learning framework and the DPA-SGD algorithm. We open source our system and it can promote further research on distributed learning and especially federated learning.
+                </div>
+            </div>
+        </header>
+				
+        <!-- Main Body -->
+        <div class="main-body">
+            <div class="w3-container">
+                <div class="w3-content" style="max-width:1000px">
+
+                    <!-- Links -->
+                    <div class="link-container">
+                        <ul class="horizontal-list">
+                            <li>
+								<a href="/attachment/FedDeep.pdf"style="color: black;"><span class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"><i class="fas fa-file-alt"></i> Paper</span></a>
+							</li>
+<!--                            <li>
+								<a href="https://github.com/chaoyanghe/FederatedLearning" style="color: black;"><span class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"><i class="fas fa-code"></i> Code</span></a>
+							</li>-->
+							<li>
+								<a href="/attachment/fl-dpa-sgd-poster.pdf" style="color: black;"><span class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"><i class="far fa-map"></i> GitHub</span></a>
+							</li>
+                        </ul>
+                    </div>
+					
+					<!-- TODO: with out this break line, the links might float to incorrect location, need fix -->
+					<br>
+					
+                    <!-- Markdown Body -->
+                    <div id="markdown-body"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-light-grey w3-padding-32 w3-small">
+            <p style="color: grey">Welcome to FedML!</p>
+        </footer>
+
+    </body>
+</html>
