@@ -34,13 +34,13 @@ Users can change this package to add more advanced algorithms.
 
 
 ## Join our Community
-Join slack.fedml.ai
+Please join our community. We will post updated features and answer questions on Slack.
 
-Join our WeChat Group
+[Join fedml.slack.com](https://join.slack.com/t/fedml/shared_invite/zt-gbpi8y2o-QMU0vhVHjm9Y9gqQu~eygg)
 
 
 ## Contributing
-We sincerely welcome contributors. Please read this page to know how to start contributing code to FedML. 
+We sincerely welcome contributors. Please email us for further information. 
 
 ## Citation
 Please cite FedML in your publications if it helps your research:
