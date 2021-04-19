@@ -1,3 +1,16 @@
+## FedML Ecosystem
+FedML Core Framework ([GitHub](https://github.com/FedML-AI/FedML), [Paper](https://arxiv.org/abs/2007.13518)) 
+
+FedNLP (Natural Language Processing)  ([GitHub](https://github.com/FedML-AI/FedNLP), [Paper](https://fedml.ai/files/FedNLP.pdf)) 
+
+FedGraphNN (Data Mining, Graph Neural Networks):  ([GitHub](https://github.com/FedML-AI/FedGraphNN), [Paper](https://arxiv.org/abs/2104.07145)) 
+
+FedCV (Computer Vision) ([GitHub](https://github.com/FedML-AI/FedCV), [Paper](https://fedml.ai/files/FedCV.pdf)) 
+
+FedIoT (Internet of Things)  ([GitHub](https://github.com/FedML-AI/FedML-IoT))
+
+FedMobile (Smartphones): ([Mobile-GitHub](https://github.com/FedML-AI/FedML-Mobile), [Server-GitHub](https://github.com/FedML-AI/FedML-Server))
+
 ## What is Federated Learning?
 Please read this long vision paper [Advances and Open Problems in Federated Learning](https://arxiv.org/abs/1912.04977).
 This publication list is also helpful: https://github.com/chaoyanghe/Awesome-Federated-Learning
