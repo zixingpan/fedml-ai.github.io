@@ -1,0 +1,8 @@
+#######################
+Get Started
+#######################
+
+:doc:`user_guide/open_source_user_guide`
+
+:doc:`user_guide/mlops_user_guide`
+

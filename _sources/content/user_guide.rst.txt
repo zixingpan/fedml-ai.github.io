@@ -1,0 +1,12 @@
+#######################
+User Guide
+#######################
+
+When you are limited with the resources, it becomes hard to speed up model training and reduce the training time
+without affecting the model's performance. There are multiple ways you can speed up your model's time to convergence.
+
+.. toctree::
+   :maxdepth: 2
+
+   user_guide/open_source_user_guide
+   user_guide/mlops_user_guide

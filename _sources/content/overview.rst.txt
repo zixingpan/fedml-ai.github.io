@@ -1,0 +1,34 @@
+#######################
+FedML Overview
+#######################
+
+FedML's core technology is backed by years of cutting-edge research represented in 50+ publications in ML/FL Algorithms, Security/Privacy, Systems, and Applications, as well as 10 years of industrial experience in Distributed Systems, Cloud Computing, and Mobile/IoT Systems.
+
+1. Industrial-level System Design and Optimization
+=======================
+
+.. image:: ./images/fedml.webp
+
+* FedML Open Source Library (https://github.com/FedML-AI)
+* FedML Edge SDK and MLOps Platform (https://open.fedml.ai)
+
+The software architecture of the open-source library is on the left side.
+MLOps platform further reuses the source code of the open-source library (the green-colored box).
+
+
+2. User-friendly MLOps platform to simplify collaboration and real-world deployment
+=======================
+.. image:: ./images/mlops0.png
+
+.. image:: ./images/mlops1.png
+
+3. A Full-stack of Scientific Publications in ML Algorithms, Security/Privacy, Systems, Applications, and Visionary Impacts
+=======================
+
+- (1) Vision Paper for High Scientific Impacts
+- (2) System for Large-scale Distributed/Federated Training
+- (3) Training Algorithms for FL
+- (4) Security/privacy for FL
+- (5) AI Applications
+
+Please check this publication list for details: https://fedml.ai/research-papers/

@@ -1,0 +1,10 @@
+#######################
+Open Source Library
+#######################
+
+.. toctree::
+
+    open_source/installation
+    open_source/datasets-and-models.md
+    open_source/algorithm-reference-implementation.md
+    open_source/Benchmark.md
